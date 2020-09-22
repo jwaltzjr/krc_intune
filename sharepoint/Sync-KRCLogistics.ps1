@@ -1,5 +1,4 @@
-#region Functions
-function Sync-SharepointLocation {
+﻿function Sync-SharepointLocation {
     param (
         [guid]$siteId,
         [guid]$webId,
@@ -39,10 +38,8 @@ function Sync-SharepointLocation {
         return $true
     }    
 }
-#endregion
-#region Main Process
+
 try {
-    #region Sharepoint Sync
     [mailaddress]$userUpn = cmd /c "whoami/upn"
     $params = @{
         #replace with data captured from your sharepoint site.
@@ -67,7 +64,6 @@ try {
     else {
         Write-Host "Location already syncronized: $($params.syncPath)" -ForegroundColor Yellow
     }
-    #endregion
 }
 catch {
     $errorMsg = $_.Exception.Message
@@ -81,4 +77,3 @@ finally {
         Write-Host "Completed successfully.."
     }
 }
-#endregion
