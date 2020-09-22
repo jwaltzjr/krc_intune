@@ -1,4 +1,4 @@
-﻿#region Functions
+#region Functions
 function Sync-SharepointLocation {
     param (
         [guid]$siteId,
