@@ -1,4 +1,4 @@
-﻿$Url = "https://downloads.citrix.com/18632/CitrixWorkspaceApp.exe?__gda__=1600745047_0e65890719326c138dbfbbee451186b5"
+$Url = "https://downloadplugins.citrix.com/Windows/CitrixWorkspaceApp.exe"
 $Target = "$env:SystemRoot\Temp\CitrixWorkspaceApp.exe"
 $Arguments = 'DONOTSTARTCC=1 /AutoUpdateCheck=Auto /AutoUpdateStream=LTSR /DeferUpdateCount=3 /AURolloutPriority=Slow /NoReboot /Silent EnableCEIP=False'
 
