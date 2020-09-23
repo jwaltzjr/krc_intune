@@ -54,6 +54,8 @@ try {
         webTitle  = "Rates"
         listTitle = "Documents"
     }
+    $regKeyLocation="HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+    $ScriptName="SharepointSync-Rates"
     $params.syncPath  = "$(split-path $env:onedrive)\KRC Logistics\$($params.webTitle) - $($Params.listTitle)"
     Write-Host "SharePoint params:"
     $params | Format-Table
@@ -66,6 +68,7 @@ try {
     }
     else {
         Write-Host "Location already syncronized: $($params.syncPath)" -ForegroundColor Yellow
+        Remove-ItemProperty -Path $regKeyLocation -Name $ScriptName -Force
     }
     #endregion
 }
